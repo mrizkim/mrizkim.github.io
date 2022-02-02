@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+
+    <!-- font awesome cdn link  -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <script>
+      function rain() {
+        let amount = 50;
+        let body = document.querySelector('body');
+        let j = 0;
+        while (j < amount) {
+          let drop = document.createElement('j');
+
+          let size = Math.random() * 5;
+          let posX = Math.floor(Math.random() * window.innerWidth);
+          let delay = Math.random() * -20;
+          let duration = Math.random() * 5;
+
+          drop.style.width = 0.2 + size + 'px';
+          drop.style.left = posX + 'px';
+          drop.style.animationDelay = delay + 's';
+          drop.style.animationDuration = 1 + duration + 's';
+          body.appendChild(drop);
+          j++;
+        }
+      }
+      rain();
+    </script>
+
+    <!-- navbar section starts  -->
+
+    <nav class="navbar">
+      <a href="home.html" id="active">
+        <i class="icon">
+          <ion-icon name="home-outline"></ion-icon>
+        </i>
+        <span>Home</span>
+      </a>
+      <a href="about.html">
+        <i class="icon">
+          <ion-icon name="person-outline"></ion-icon>
+        </i>
+        <span>About</span>
+      </a>
+      <a href="portfolio.html">
+        <i class="icon">
+          <ion-icon name="desktop-outline"></ion-icon>
+        </i>
+        <span>Portfolio</span>
+      </a>
+      <a href="blogs.html">
+        <i class="icon">
+          <ion-icon name="newspaper-outline"></ion-icon>
+        </i>
+        <span>Blogs</span>
+      </a>
+      <a href="contact.html">
+        <i class="icon">
+          <ion-icon name="chatbubble-outline"></ion-icon>
+        </i>
+        <span>Contact</span>
+      </a>
+
+      <!-- <a href="home.html"> <i class="fas fa-home"></i> <span>home</span> </a>
+      <a href="about.html"> <i class="fas fa-user"></i> <span>about</span> </a>
+      <a href="portfolio.html"> <i class="fas fa-briefcase"></i> <span>portfolio</span> </a>
+      <a href="blogs.html"> <i class="fas fa-blog"></i> <span>blogs</span> </a>
+      <a href="contact.html"> <i class="fas fa-address-book"></i> <span>contact</span> </a> -->
+    </nav>
+
+    <!-- navbar section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home">
+      <div class="image">
+        <img src="images/photo.jpg" alt="" />
+      </div>
+
+      <div class="content">
+        <h2>hi, i am</h2>
+        <h3>Muhamad Rizki Munawar</h3>
+        <span>Programmer developer</span>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet porro facere expedita ab atque a consectetur odit vel soluta itaque.</p>
+        <a href="about.html" class="btn">
+          about me <i><ion-icon name="person-outline"></ion-icon></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/TextPlugin.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.from(' .image img', { duration: 2, rotateY: 360, opacity: 0 });
+      gsap.from('p', { duration: 4, text: '' });
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
